@@ -59,15 +59,31 @@ namespace Zadatak3._1b
             }
         }
 
+        /// <summary>
+        /// Handles the MouseMove event of the pictureBox1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The MouseEventArgs instance containing the event data.</param>
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            // Set the form's text to the current mouse coordinates
             this.Text = e.X + "," + e.Y;
+
+            // Get the brush size from the numericUpDown control
             int d = (int)numericUpDown1.Value;
+
+            // Check if the drawing mode is enabled
             if (radioButtonCrtanje.Checked)
+            {
+                // Check if the left mouse button is pressed
                 if (e.Button == MouseButtons.Left)
+                {
+                    // Fill an ellipse with the current pen color and size at the current mouse coordinates
                     gr.FillEllipse(
                         new SolidBrush(olovka.Color),
                         e.X - d / 2, e.Y - d / 2, d, d);
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
