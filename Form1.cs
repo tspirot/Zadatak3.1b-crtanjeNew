@@ -5,6 +5,7 @@ namespace Zadatak3._1b
         int px, py;
         Pen olovka = new Pen(Color.Black, 2);
         Graphics gr;
+        Point[] tacke = new Point[3];
         public Form1()
         {
             InitializeComponent();
